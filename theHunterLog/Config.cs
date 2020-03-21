@@ -11,7 +11,7 @@ namespace theHunterLog
         public static string databaseUriUser = "Userdata.sqlite";
         public static string databaseUriSystem = "Systemdata.sqlite";
 
-        public static string language = "en";
+        public static string language = "de";
 
         public static bool LoadConfigFromFile()
         {
