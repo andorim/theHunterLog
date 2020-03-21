@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:theHunterLog"
         mc:Ignorable="d"
-        Title="theHunterLog: Settings" Height="190" Width="400" ResizeMode="NoResize">
+        Title="theHunterLog: Settings" Height="240" Width="400" ResizeMode="NoResize">
 
     <StackPanel>
+        <Button Height="50" x:Name="btn_Language">Language</Button>
         <Button Height="50" x:Name="btn_DeleteAll">Delete all Data</Button>
         <Button Height="50" x:Name="btn_SystemTables" Click="btn_SystemTables_Click">Manage System Tables</Button>
         <Button Height="50" x:Name="btn_Close" Click="btn_Close_Click">Close Settings</Button>
