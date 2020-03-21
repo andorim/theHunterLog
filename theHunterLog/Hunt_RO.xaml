@@ -1,0 +1,174 @@
+﻿<Window x:Class="theHunterLog.Hunt_RO"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:theHunterLog"
+        mc:Ignorable="d"
+        Title="Hunt" Height="500" Width="1000" MaxWidth="1000" MaxHeight="500" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" Closing="Window_Closing">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="100"></Setter>
+            <Setter Property="Margin" Value="10,0,10,0"></Setter>
+            <Setter Property="Height" Value="20"></Setter>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="2"></Setter>
+            <Setter Property="IsReadOnly" Value="True"></Setter>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Width" Value="180"></Setter>
+            <Setter Property="Margin" Value="2"></Setter>
+        </Style>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical" Margin="5,5,5,5" Background="AliceBlue">
+        <StackPanel Orientation="Horizontal">
+            <Label Width="630">Hunt</Label>
+
+        </StackPanel>
+        <Border BorderBrush="Black" BorderThickness="1">
+            
+        <StackPanel Orientation="Horizontal" Height="400">
+            <StackPanel Orientation="Vertical" Width="300">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="115"></ColumnDefinition>
+                        <ColumnDefinition Width="185"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0">Tier</Label>
+                    <Label Grid.Row="1" Grid.Column="0">Geschlecht</Label>
+                    <Label Grid.Row="2" Grid.Column="0">Gewicht</Label>
+                    <Label Grid.Row="3" Grid.Column="0">Fellart</Label>
+                    <Label Grid.Row="4" Grid.Column="0">Verfolgungsdistanz</Label>
+                    <Label Grid.Row="5" Grid.Column="0">Schwierigkeit</Label>
+                    <Label Grid.Row="6" Grid.Column="0">Trophäenart</Label>
+                    <Label Grid.Row="7" Grid.Column="0">Trophäenorgan</Label>
+                    <Label Grid.Row="8" Grid.Column="0">Trophäe</Label>
+                    <Label Grid.Row="9" Grid.Column="0">Trophäenwertung</Label>
+                    <Label Grid.Row="10" Grid.Column="0">Erfahrungspunkte</Label>
+                    <Label Grid.Row="11" Grid.Column="0">Geld</Label>
+                    <Label Grid.Row="12" Grid.Column="0">Sitzungspunkte</Label>
+                    <Label Grid.Row="0" Grid.Column="1" x:Name="cb_Animal">
+
+                    </Label>
+                    <Label Grid.Row="1" Grid.Column="1" x:Name="cb_Sex">
+
+                    </Label>
+                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txt_Weight" >0</TextBox>
+                    <Label Grid.Row="3" Grid.Column="1" x:Name="cb_Fur">
+
+                    </Label>
+                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="txt_Distance" >0</TextBox>
+                    <Label Grid.Row="5" Grid.Column="1" x:Name="cb_Difficulty">
+
+                    </Label>
+                    <Label Grid.Row="6" Grid.Column="1" x:Name="cb_TrophyKind">
+
+                    </Label>
+                    <Label Grid.Row="7" Grid.Column="1" x:Name="cb_TrophyOrgan">
+
+                    </Label>
+                    <Label Grid.Row="8" Grid.Column="1" x:Name="cb_Trophy">
+
+                    </Label>
+                    <TextBox Grid.Row="9" Grid.Column="1" x:Name="txt_Score" >0</TextBox>
+                    <TextBox Grid.Row="10" Grid.Column="1" x:Name="txt_XP" >0</TextBox>
+                    <TextBox Grid.Row="11" Grid.Column="1" x:Name="txt_Money" >0</TextBox>
+                    <TextBox Grid.Row="12" Grid.Column="1" x:Name="txt_SessionPt" >0</TextBox>
+                </Grid>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Width="660" Margin="10,0,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                            <Label Width="550">Hits</Label>
+                        </StackPanel>
+                        
+                        <Border BorderThickness="1" BorderBrush="Black" CornerRadius="2">
+                            <StackPanel Orientation="Vertical" Background="White">
+                                    <Grid Background="Azure">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="50"></ColumnDefinition>
+                                            <ColumnDefinition Width="170"></ColumnDefinition>
+                                            <ColumnDefinition Width="170"></ColumnDefinition>
+                                            <ColumnDefinition Width="80"></ColumnDefinition>
+                                            <ColumnDefinition Width="80"></ColumnDefinition>
+                                            <ColumnDefinition Width="80"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Right">#</Label>
+                                        <Label Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Right">Weapon</Label>
+                                        <Label Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Right">Ammunition</Label>
+                                        <Label Grid.Row="0" Grid.Column="3" HorizontalContentAlignment="Right">Distance</Label>
+                                        <Label Grid.Row="0" Grid.Column="4" HorizontalContentAlignment="Right">Weaponpt.</Label>
+                                        <Label Grid.Row="0" Grid.Column="5" HorizontalContentAlignment="Right">Damage</Label>
+                                    </Grid>
+                                <ScrollViewer CanContentScroll="True" Height="120">
+                                    <StackPanel Orientation="Vertical" x:Name="sp_Hits">
+                                        
+                                    </StackPanel>
+                                </ScrollViewer>
+                            </StackPanel>
+                        </Border>
+                    
+                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                        <StackPanel Orientation="Vertical">
+                            <Label>True Score</Label>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                    <RowDefinition Height="30"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"></ColumnDefinition>
+                                    <ColumnDefinition Width="100"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0">trueA</Label>
+                                <Label Grid.Row="1" Grid.Column="0">trueB</Label>
+                                <Label Grid.Row="2" Grid.Column="0">trueC</Label>
+                                <Label Grid.Row="3" Grid.Column="0">trueD</Label>
+                                <Label Grid.Row="4" Grid.Column="0">trueE</Label>
+                                <Label Grid.Row="5" Grid.Column="0">trueF</Label>
+                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txt_trueA" >0</TextBox>
+                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txt_trueB" >0</TextBox>
+                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txt_trueC" >0</TextBox>
+                                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txt_trueD" >0</TextBox>
+                                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txt_trueE" >0</TextBox>
+                                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txt_trueF" >0</TextBox>
+                            </Grid>
+                            
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" Width="350" Margin="0,0,0,0">
+                            <Label>Note</Label>
+                            <TextBox x:Name="txtBl_Note" Height="176"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                
+            </StackPanel>
+        </StackPanel>
+        </Border>
+    </StackPanel>
+
+
+</Window>

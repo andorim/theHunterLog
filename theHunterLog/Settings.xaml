@@ -1,0 +1,15 @@
+﻿<Window x:Class="theHunterLog.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:theHunterLog"
+        mc:Ignorable="d"
+        Title="theHunterLog: Settings" Height="190" Width="400" ResizeMode="NoResize">
+
+    <StackPanel>
+        <Button Height="50" x:Name="btn_DeleteAll">Delete all Data</Button>
+        <Button Height="50" x:Name="btn_SystemTables" Click="btn_SystemTables_Click">Manage System Tables</Button>
+        <Button Height="50" x:Name="btn_Close" Click="btn_Close_Click">Close Settings</Button>
+    </StackPanel>
+</Window>

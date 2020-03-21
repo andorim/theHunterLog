@@ -1,0 +1,57 @@
+﻿<Window x:Class="theHunterLog.Top"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:theHunterLog"
+        mc:Ignorable="d"
+        Title="Top" Height="450" Width="1000" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ScrollViewer Grid.Row="0" Grid.Column="0" Height="400">
+            <StackPanel x:Name="sp_Animals">
+                <Button x:Name="btn_All" Tag="0" Click="btn_Animal_Click" >All</Button>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Label x:Name="lbl_Species">All</Label>
+            <ScrollViewer  Width="850" Height="375" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal" x:Name="sp_LogEntry" Background="AliceBlue">
+                        <Label x:Name="lb_Date" Width="120">Date</Label>
+                        <Label x:Name="lb_Species" Width="120">Species</Label>
+                        <Label x:Name="lb_trScore" Width="70" HorizontalContentAlignment="Right">Score</Label>
+                        <Label x:Name="lb_trKind" Width="100">Trophy Kind</Label>
+                        <Label x:Name="lb_trOrgane" Width="100">Trophy Organ</Label>
+                        <Label x:Name="lb_trophy" Width="70">Trophy</Label>
+                        <Label x:Name="lb_ep" Width="70">Experience</Label>
+                        <Label x:Name="lb_money" Width="70" HorizontalContentAlignment="Right">Money</Label>
+                        <Label x:Name="lb_trueA" Width="70">trueA</Label>
+                        <Label x:Name="lb_trueB" Width="70">trueB</Label>
+                        <Label x:Name="lb_trueC" Width="70">trueC</Label>
+                        <Label x:Name="lb_trueD" Width="70">trueD</Label>
+                        <Label x:Name="lb_trueE" Width="70">trueE</Label>
+                        <Label x:Name="lb_trueF" Width="70">trueF</Label>
+                    </StackPanel>
+                    <StackPanel  Width="auto" x:Name="sp_Hunts">
+
+                    </StackPanel>
+                </StackPanel>
+                
+            </ScrollViewer>
+        </StackPanel>
+        
+        
+        
+        
+
+
+
+    </Grid>
+</Window>

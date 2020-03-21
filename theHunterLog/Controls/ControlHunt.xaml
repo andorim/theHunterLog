@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="theHunterLog.Controls.ControlHunt"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:theHunterLog.Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="1142" MouseDoubleClick="UserControl_MouseDoubleClick">
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="BorderThickness" Value="0,0,1,0"></Setter>
+            <Setter Property="BorderBrush" Value="Black"></Setter>
+        </Style>
+    </UserControl.Resources>
+    <Border BorderBrush="Black" BorderThickness="1">
+        <StackPanel Orientation="Horizontal" x:Name="sp_LogEntry" Background="AliceBlue">
+            <Label x:Name="lb_Date" Width="120"></Label>
+            <Label x:Name="lb_Species" Width="120"></Label>
+            <Label x:Name="lb_trScore" Width="70" HorizontalContentAlignment="Right"></Label>
+            <Label x:Name="lb_trKind" Width="100"></Label>
+            <Label x:Name="lb_trOrgane" Width="100"></Label>
+            <Label x:Name="lb_trophy" Width="70"></Label>
+            <Label x:Name="lb_ep" Width="70"></Label>
+            <Label x:Name="lb_money" Width="70" HorizontalContentAlignment="Right"></Label>
+            <Label x:Name="lb_trueA" Width="70"></Label>
+            <Label x:Name="lb_trueB" Width="70"></Label>
+            <Label x:Name="lb_trueC" Width="70"></Label>
+            <Label x:Name="lb_trueD" Width="70"></Label>
+            <Label x:Name="lb_trueE" Width="70"></Label>
+            <Label x:Name="lb_trueF" Width="70"></Label>
+        </StackPanel>
+    </Border>
+</UserControl>

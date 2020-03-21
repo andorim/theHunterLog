@@ -1,0 +1,19 @@
+﻿<Window x:Class="theHunterLog.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:theHunterLog"
+        mc:Ignorable="d"
+        Title="theHunterLog" Height="340" Width="400" ResizeMode="CanMinimize" Closing="Window_Closing">
+    <StackPanel>
+        <Button Height="50" x:Name="btn_NewLog" Click="btn_NewLog_Click">New Log</Button>
+        <Button Height="50" x:Name="btn_ShowLogs" Click="btn_ShowLogs_Click">Show Logs</Button>
+        <Button Height="50" x:Name="btn_Top" Click="btn_Top_Click">Top</Button>
+        <Button Height="50" x:Name="btn_Search">Search</Button>
+        <Button Height="50" x:Name="btn_Settings" Click="btn_Settings_Click">Settings</Button>
+        <Button Height="50" x:Name="btn_ExitApp" Click="btn_ExitApp_Click">Exit</Button>
+
+
+    </StackPanel>
+</Window>
