@@ -217,13 +217,13 @@ namespace theHunterLog.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Einstellung {
+        [global::System.Configuration.DefaultSettingValueAttribute("de")]
+        public string Language {
             get {
-                return ((string)(this["Einstellung"]));
+                return ((string)(this["Language"]));
             }
             set {
-                this["Einstellung"] = value;
+                this["Language"] = value;
             }
         }
     }

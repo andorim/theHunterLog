@@ -20,13 +20,11 @@ namespace theHunterLog.Database.FunktionClasses
         {
             return new SQLiteConnection(Config.databaseUriSystem);
         }
-        public static void CreateTables()
+        public static void CreateSystemTables()
         {
             Ammunition.CreateTable();
             Difficulty.CreateTable();
             Fur.CreateTable();
-            Hit.CreateTable();
-            Hunt.CreateTable();
             Sex.CreateTable();
             Species.CreateTable();
             Trophy.CreateTable();
@@ -35,6 +33,12 @@ namespace theHunterLog.Database.FunktionClasses
             TrueScore.CreateTable();
             Weapon.CreateTable();
         }
+        public static void CreateUserTables()
+        {
+            Hit.CreateTable();
+            Hunt.CreateTable();
+        }
+
 
 
     }

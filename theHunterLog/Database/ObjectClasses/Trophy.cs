@@ -13,17 +13,15 @@ namespace theHunterLog.Database.ObjectClasses
     {
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
-        public string en { get; set; }
-        public string de { get; set; }
+        public string name { get; set; }
 
         public Trophy()
         {
 
         }
-        public Trophy(string en, string de)
+        public Trophy(string name)
         {
-            this.en = en;
-            this.de = de;
+            this.name = name;
         }
         static public void CreateTable()
         {
@@ -34,15 +32,8 @@ namespace theHunterLog.Database.ObjectClasses
         public static string GetNameFromID(int i)
         {
             SQLiteConnection db = DatabaseTools.getSystemConnection();
-            Trophy sp = db.Query<Trophy>("SELECT " + Config.language + " FROM Trophy WHERE id = " + i)[0];
-            if (Config.language == "de")
-            {
-                return sp.de;
-            }
-            else
-            {
-                return sp.en;
-            }
+            Trophy sp = db.Query<Trophy>("SELECT name FROM Trophy WHERE id = " + i)[0];
+            return sp.name;
         }
         public void Insert()
         {

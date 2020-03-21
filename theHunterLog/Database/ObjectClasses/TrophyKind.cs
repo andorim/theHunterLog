@@ -13,16 +13,14 @@ namespace theHunterLog.Database.ObjectClasses
     {
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
-        public string en { get; set; }
-        public string de { get; set; }
+        public string name { get; set; }
         public TrophyKind()
         {
 
         }
-        public TrophyKind(string en, string de)
+        public TrophyKind(string name)
         {
-            this.en = en;
-            this.de = de;
+            this.name = name;
         }
 
 
@@ -35,15 +33,8 @@ namespace theHunterLog.Database.ObjectClasses
         public static string GetNameFromID(int i)
         {
             SQLiteConnection db = DatabaseTools.getSystemConnection();
-            TrophyKind sp = db.Query<TrophyKind>("SELECT " + Config.language + " FROM TrophyKind WHERE id = " + i)[0];
-            if (Config.language == "de")
-            {
-                return sp.de;
-            }
-            else
-            {
-                return sp.en;
-            }
+            TrophyKind sp = db.Query<TrophyKind>("SELECT name FROM TrophyKind WHERE id = " + i)[0];
+            return sp.name;
         }
         public void Insert()
         {
@@ -54,7 +45,7 @@ namespace theHunterLog.Database.ObjectClasses
         public static IEnumerable<TrophyKind> GetAll()
         {
             SQLiteConnection db = DatabaseTools.getSystemConnection();
-            IEnumerable<TrophyKind> result = db.Query<TrophyKind>("SELECT * FROM TrophyKind");
+            IEnumerable<TrophyKind> result = db.Query<TrophyKind>("SELECT * FROM TrophyKind ORDER BY name");
             db.Close();
             return result;
         }

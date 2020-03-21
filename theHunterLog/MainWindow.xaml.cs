@@ -49,7 +49,6 @@ namespace theHunterLog
             Main.menu.SaveWindowPos();
             Main.settings.SaveWindowPos();
             Main.newLog.SaveWindowPos();
-            Main.systemTables.SaveWindowPos();
             Main.log.SaveWindowPos();
             Main.top.SaveWindowPos();
             Main.hunt_RO.SaveWindowPos();

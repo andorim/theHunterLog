@@ -13,17 +13,15 @@ namespace theHunterLog.Database.ObjectClasses
     {
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
-        public string en { get; set; }
-        public string de { get; set; }
+        public string name { get; set; }
 
         public Ammunition()
         {
 
         }
-        public Ammunition(string en, string de)
+        public Ammunition(string name)
         {
-            this.en = en;
-            this.de = de;
+            this.name = name;
         }
 
         static public void CreateTable()
@@ -35,15 +33,8 @@ namespace theHunterLog.Database.ObjectClasses
         public static string GetNameFromID(int i)
         {
             SQLiteConnection db = DatabaseTools.getSystemConnection();
-            Ammunition sp = db.Query<Ammunition>("SELECT " + Config.language + " FROM Ammunition WHERE id = " + i)[0];
-            if (Config.language == "de")
-            {
-                return sp.de;
-            }
-            else
-            {
-                return sp.en;
-            }
+            Ammunition sp = db.Query<Ammunition>("SELECT name FROM Ammunition WHERE id = " + i)[0];
+            return sp.name;
         }
         public void Insert()
         {
@@ -54,7 +45,7 @@ namespace theHunterLog.Database.ObjectClasses
         public static IEnumerable<Ammunition> GetAll()
         {
             SQLiteConnection db = DatabaseTools.getSystemConnection();
-            IEnumerable<Ammunition> result =  db.Query<Ammunition>("SELECT * FROM Ammunition");
+            IEnumerable<Ammunition> result =  db.Query<Ammunition>("SELECT * FROM Ammunition ORDER BY name");
             db.Close();
             return result;
         }

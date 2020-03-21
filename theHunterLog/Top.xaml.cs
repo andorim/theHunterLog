@@ -36,7 +36,7 @@ namespace theHunterLog
             {
                 Button btn = new Button();
                 btn.Tag = sp.id.ToString();
-                btn.Content = sp.de;
+                btn.Content = sp.name;
                 btn.Click += btn_Animal_Click;
                 sp_Animals.Children.Add(btn);
             }

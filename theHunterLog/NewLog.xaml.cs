@@ -102,7 +102,7 @@ namespace theHunterLog
             foreach (Species ob in ieSp)
             {
                 ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.de;
+                cbI.Content = ob.name;
                 cbI.Tag = ob.id;
                 cb_Animal.Items.Add(cbI);
             }
@@ -110,7 +110,7 @@ namespace theHunterLog
             foreach(Sex ob in ieS)
             {
                 ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.de;
+                cbI.Content = ob.name;
                 cbI.Tag = ob.id;
                 cb_Sex.Items.Add(cbI);
             }
@@ -118,19 +118,19 @@ namespace theHunterLog
             foreach (Fur ob in ieF)
             {
                 ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.de;
+                cbI.Content = ob.name;
                 
                 cbI.Tag = ob.id;
 
                 cb_Fur.Items.Add(cbI);
-                if (ob.de == "Normal")
+                if (ob.id == 1)
                     cb_Fur.SelectedItem = cbI;
             }
             IEnumerable<Difficulty> ieDif = Difficulty.GetAll();
             foreach (Difficulty ob in ieDif)
             {
                 ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.de;
+                cbI.Content = ob.name;
                 cbI.Tag = ob.id;
                 cb_Difficulty.Items.Add(cbI);
             }
@@ -138,30 +138,30 @@ namespace theHunterLog
             foreach (TrophyKind ob in ieTrK)
             {
                 ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.de;
+                cbI.Content = ob.name;
                 cbI.Tag = ob.id;
                 cb_TrophyKind.Items.Add(cbI);
-                if (ob.de == "Keine")
+                if (ob.id == 1)
                     cb_TrophyKind.SelectedItem = cbI;
             }
             IEnumerable<TrophyOrgane> ieTrO = TrophyOrgane.GetAll();
             foreach (TrophyOrgane ob in ieTrO)
             {
                 ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.de;
+                cbI.Content = ob.name;
                 cbI.Tag = ob.id;
                 cb_TrophyOrgan.Items.Add(cbI);
-                if (ob.de == "Keine")
+                if (ob.id == 1)
                     cb_TrophyOrgan.SelectedItem = cbI;
             }
             IEnumerable<Trophy> ieTr = Trophy.GetAll();
             foreach (Trophy ob in ieTr)
             {
                 ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.de;
+                cbI.Content = ob.name;
                 cbI.Tag = ob.id;
                 cb_Trophy.Items.Add(cbI);
-                if (ob.de == "Keine")
+                if (ob.id == 1)
                     cb_Trophy.SelectedItem = cbI;
             }
 

@@ -37,11 +37,6 @@ namespace theHunterLog
             DragMove();
         }
 
-        private void btn_SystemTables_Click(object sender, RoutedEventArgs e)
-        {
-            Main.systemTables = new SystemTables();
-            Main.systemTables.Show();
-        }
         public void SaveWindowPos()
         {
             Properties.Settings.Default.SettingsWindowTop = this.Top;

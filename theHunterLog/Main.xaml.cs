@@ -26,7 +26,6 @@ namespace theHunterLog
         public static Settings settings;
         public static NewLog newLog;
         public static Main main;
-        public static SystemTables systemTables;
         public static Log log;
         public static Top top;
         public static Hunt_RO hunt_RO;
@@ -35,13 +34,13 @@ namespace theHunterLog
         public static int sessionHunts;
         public Main()
         {
+            Database.FunktionClasses.DatabaseTools.CreateSystemTables();
+            Database.FunktionClasses.DatabaseTools.CreateUserTables();
             InitializeComponent();
             settings = new Settings();
             settings.Close();
             newLog = new NewLog();
             newLog.Close();
-            systemTables = new SystemTables();
-            systemTables.Close();
             log = new Log();
             log.Close();
             top = new Top();
@@ -58,7 +57,7 @@ namespace theHunterLog
             menu.Show();
             isHidden = false;
 
-            Database.FunktionClasses.DatabaseTools.CreateTables();
+            
 
 
         }
@@ -80,7 +79,6 @@ namespace theHunterLog
                 TryHide(menu);
                 TryHide(settings);
                 TryHide(newLog);
-                TryHide(systemTables);
                 TryHide(log);
                 TryHide(top);
                 TryHide(hunt_RO);
@@ -91,7 +89,6 @@ namespace theHunterLog
                 TryShow(menu);
                 TryShow(settings);
                 TryShow(newLog);
-                TryShow(systemTables);
                 TryShow(log);
                 TryShow(top);
                 TryShow(hunt_RO);

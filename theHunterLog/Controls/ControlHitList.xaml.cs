@@ -55,7 +55,7 @@ namespace theHunterLog
             foreach (Weapon ob in ieW)
             {
                 ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.de;
+                cbI.Content = ob.name;
                 cbI.Tag = ob.id;
                 cb_Weapon.Items.Add(cbI);
             }
@@ -63,7 +63,7 @@ namespace theHunterLog
             foreach (Ammunition ob in ieA)
             {
                 ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.de;
+                cbI.Content = ob.name;
                 cbI.Tag = ob.id;
                 cb_Ammo.Items.Add(cbI);
             }
