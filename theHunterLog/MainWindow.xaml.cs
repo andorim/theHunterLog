@@ -23,6 +23,7 @@ namespace theHunterLog
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = Main.lang;
             this.Top = Properties.Settings.Default.MenuWindowTop;
             this.Left = Properties.Settings.Default.MenuWindowLeft;
         }

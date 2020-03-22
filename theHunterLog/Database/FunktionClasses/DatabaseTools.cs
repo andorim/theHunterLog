@@ -25,6 +25,7 @@ namespace theHunterLog.Database.FunktionClasses
             Ammunition.CreateTable();
             Difficulty.CreateTable();
             Fur.CreateTable();
+            Lang_String.CreateTable();
             Sex.CreateTable();
             Species.CreateTable();
             Trophy.CreateTable();

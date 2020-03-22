@@ -16,28 +16,28 @@
         </Grid.ColumnDefinitions>
         <ScrollViewer Grid.Row="0" Grid.Column="0" Height="400">
             <StackPanel x:Name="sp_Animals">
-                <Button x:Name="btn_All" Tag="0" Click="btn_Animal_Click" >All</Button>
+                <Button x:Name="btn_All" Tag="0" Click="btn_Animal_Click" Content="{Binding btn_all}"></Button>
             </StackPanel>
         </ScrollViewer>
         <StackPanel Grid.Row="0" Grid.Column="1">
-            <Label x:Name="lbl_Species">All</Label>
+            <Label x:Name="lbl_Species" Content="{Binding btn_all}"></Label>
             <ScrollViewer  Width="850" Height="375" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Disabled">
                 <StackPanel>
                     <StackPanel Orientation="Horizontal" x:Name="sp_LogEntry" Background="AliceBlue">
-                        <Label x:Name="lb_Date" Width="120">Date</Label>
-                        <Label x:Name="lb_Species" Width="120">Species</Label>
-                        <Label x:Name="lb_trScore" Width="70" HorizontalContentAlignment="Right">Score</Label>
-                        <Label x:Name="lb_trKind" Width="100">Trophy Kind</Label>
-                        <Label x:Name="lb_trOrgane" Width="100">Trophy Organ</Label>
-                        <Label x:Name="lb_trophy" Width="70">Trophy</Label>
-                        <Label x:Name="lb_ep" Width="70">Experience</Label>
-                        <Label x:Name="lb_money" Width="70" HorizontalContentAlignment="Right">Money</Label>
-                        <Label x:Name="lb_trueA" Width="70">trueA</Label>
-                        <Label x:Name="lb_trueB" Width="70">trueB</Label>
-                        <Label x:Name="lb_trueC" Width="70">trueC</Label>
-                        <Label x:Name="lb_trueD" Width="70">trueD</Label>
-                        <Label x:Name="lb_trueE" Width="70">trueE</Label>
-                        <Label x:Name="lb_trueF" Width="70">trueF</Label>
+                        <Label x:Name="lb_Date" Width="120" Content="{Binding lbl_date}"></Label>
+                        <Label x:Name="lb_Species" Width="120" Content="{Binding lbl_species}"></Label>
+                        <Label x:Name="lb_trScore" Width="70" HorizontalContentAlignment="Right" Content="{Binding lbl_score}"></Label>
+                        <Label x:Name="lb_trKind" Width="100" Content="{Binding lbl_trophy_kind}"></Label>
+                        <Label x:Name="lb_trOrgane" Width="100" Content="{Binding lbl_trophy_organ}"></Label>
+                        <Label x:Name="lb_trophy" Width="70" Content="{Binding lbl_trophy}"></Label>
+                        <Label x:Name="lb_ep" Width="70" Content="{Binding lbl_xp}"></Label>
+                        <Label x:Name="lb_money" Width="70" HorizontalContentAlignment="Right" Content="{Binding lbl_money}"></Label>
+                        <Label x:Name="lb_trueA" Width="70" Content="{Binding lbl_trueA}"></Label>
+                        <Label x:Name="lb_trueB" Width="70" Content="{Binding lbl_trueB}"></Label>
+                        <Label x:Name="lb_trueC" Width="70" Content="{Binding lbl_trueC}"></Label>
+                        <Label x:Name="lb_trueD" Width="70" Content="{Binding lbl_trueD}"></Label>
+                        <Label x:Name="lb_trueE" Width="70" Content="{Binding lbl_trueE}"></Label>
+                        <Label x:Name="lb_trueF" Width="70" Content="{Binding lbl_trueF}"></Label>
                     </StackPanel>
                     <StackPanel  Width="auto" x:Name="sp_Hunts">
 

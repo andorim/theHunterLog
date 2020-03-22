@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="theHunterLog" Height="340" Width="400" ResizeMode="CanMinimize" Closing="Window_Closing">
     <StackPanel>
-        <Button Height="50" x:Name="btn_NewLog" Click="btn_NewLog_Click">New Log</Button>
-        <Button Height="50" x:Name="btn_ShowLogs" Click="btn_ShowLogs_Click">Show Logs</Button>
-        <Button Height="50" x:Name="btn_Top" Click="btn_Top_Click">Top</Button>
-        <Button Height="50" x:Name="btn_Search">Search</Button>
-        <Button Height="50" x:Name="btn_Settings" Click="btn_Settings_Click">Settings</Button>
-        <Button Height="50" x:Name="btn_ExitApp" Click="btn_ExitApp_Click">Exit</Button>
+        <Button Height="50" x:Name="btn_NewLog" Click="btn_NewLog_Click" Content="{Binding btn_newLog}"></Button>
+        <Button Height="50" x:Name="btn_ShowLogs" Click="btn_ShowLogs_Click" Content="{Binding btn_showLog}"></Button>
+        <Button Height="50" x:Name="btn_Top" Click="btn_Top_Click" Content="{Binding btn_top}"></Button>
+        <Button Height="50" x:Name="btn_Search" Content="{Binding btn_search}"></Button>
+        <Button Height="50" x:Name="btn_Settings" Click="btn_Settings_Click" Content="{Binding btn_settings}"></Button>
+        <Button Height="50" x:Name="btn_ExitApp" Click="btn_ExitApp_Click" Content="{Binding btn_exit}"></Button>
 
 
     </StackPanel>

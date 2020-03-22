@@ -27,146 +27,146 @@
 
         </StackPanel>
         <Border BorderBrush="Black" BorderThickness="1">
-            
-        <StackPanel Orientation="Horizontal" Height="400">
-            <StackPanel Orientation="Vertical" Width="300">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="115"></ColumnDefinition>
-                        <ColumnDefinition Width="185"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" Grid.Column="0">Tier</Label>
-                    <Label Grid.Row="1" Grid.Column="0">Geschlecht</Label>
-                    <Label Grid.Row="2" Grid.Column="0">Gewicht</Label>
-                    <Label Grid.Row="3" Grid.Column="0">Fellart</Label>
-                    <Label Grid.Row="4" Grid.Column="0">Verfolgungsdistanz</Label>
-                    <Label Grid.Row="5" Grid.Column="0">Schwierigkeit</Label>
-                    <Label Grid.Row="6" Grid.Column="0">Trophäenart</Label>
-                    <Label Grid.Row="7" Grid.Column="0">Trophäenorgan</Label>
-                    <Label Grid.Row="8" Grid.Column="0">Trophäe</Label>
-                    <Label Grid.Row="9" Grid.Column="0">Trophäenwertung</Label>
-                    <Label Grid.Row="10" Grid.Column="0">Erfahrungspunkte</Label>
-                    <Label Grid.Row="11" Grid.Column="0">Geld</Label>
-                    <Label Grid.Row="12" Grid.Column="0">Sitzungspunkte</Label>
-                    <Label Grid.Row="0" Grid.Column="1" x:Name="cb_Animal">
 
-                    </Label>
-                    <Label Grid.Row="1" Grid.Column="1" x:Name="cb_Sex">
+            <StackPanel Orientation="Horizontal" Height="400">
+                <StackPanel Orientation="Vertical" Width="300">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                            <RowDefinition Height="30"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="115"></ColumnDefinition>
+                            <ColumnDefinition Width="185"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="0" Content="{Binding lbl_animal}"></Label>
+                        <Label Grid.Row="1" Grid.Column="0" Content="{Binding lbl_sex}"></Label>
+                        <Label Grid.Row="2" Grid.Column="0" Content="{Binding lbl_weight}"></Label>
+                        <Label Grid.Row="3" Grid.Column="0" Content="{Binding lbl_fur}"></Label>
+                        <Label Grid.Row="4" Grid.Column="0" Content="{Binding lbl_distance}"></Label>
+                        <Label Grid.Row="5" Grid.Column="0" Content="{Binding lbl_difficulty}"></Label>
+                        <Label Grid.Row="6" Grid.Column="0" Content="{Binding lbl_trophy_kind}"></Label>
+                        <Label Grid.Row="7" Grid.Column="0" Content="{Binding lbl_trophy_organ}"></Label>
+                        <Label Grid.Row="8" Grid.Column="0" Content="{Binding lbl_trophy}"></Label>
+                        <Label Grid.Row="9" Grid.Column="0" Content="{Binding lbl_trophy_score}"></Label>
+                        <Label Grid.Row="10" Grid.Column="0" Content="{Binding lbl_xp}"></Label>
+                        <Label Grid.Row="11" Grid.Column="0" Content="{Binding lbl_money}"></Label>
+                        <Label Grid.Row="12" Grid.Column="0" Content="{Binding lbl_sessionPt}"></Label>
+                        <Label Grid.Row="0" Grid.Column="1" x:Name="cb_Animal">
 
-                    </Label>
-                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txt_Weight" >0</TextBox>
-                    <Label Grid.Row="3" Grid.Column="1" x:Name="cb_Fur">
+                        </Label>
+                        <Label Grid.Row="1" Grid.Column="1" x:Name="cb_Sex">
 
-                    </Label>
-                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="txt_Distance" >0</TextBox>
-                    <Label Grid.Row="5" Grid.Column="1" x:Name="cb_Difficulty">
+                        </Label>
+                        <TextBox Grid.Row="2" Grid.Column="1" x:Name="txt_Weight" >0</TextBox>
+                        <Label Grid.Row="3" Grid.Column="1" x:Name="cb_Fur">
 
-                    </Label>
-                    <Label Grid.Row="6" Grid.Column="1" x:Name="cb_TrophyKind">
+                        </Label>
+                        <TextBox Grid.Row="4" Grid.Column="1" x:Name="txt_Distance" >0</TextBox>
+                        <Label Grid.Row="5" Grid.Column="1" x:Name="cb_Difficulty">
 
-                    </Label>
-                    <Label Grid.Row="7" Grid.Column="1" x:Name="cb_TrophyOrgan">
+                        </Label>
+                        <Label Grid.Row="6" Grid.Column="1" x:Name="cb_TrophyKind">
 
-                    </Label>
-                    <Label Grid.Row="8" Grid.Column="1" x:Name="cb_Trophy">
+                        </Label>
+                        <Label Grid.Row="7" Grid.Column="1" x:Name="cb_TrophyOrgan">
 
-                    </Label>
-                    <TextBox Grid.Row="9" Grid.Column="1" x:Name="txt_Score" >0</TextBox>
-                    <TextBox Grid.Row="10" Grid.Column="1" x:Name="txt_XP" >0</TextBox>
-                    <TextBox Grid.Row="11" Grid.Column="1" x:Name="txt_Money" >0</TextBox>
-                    <TextBox Grid.Row="12" Grid.Column="1" x:Name="txt_SessionPt" >0</TextBox>
-                </Grid>
-            </StackPanel>
-            <StackPanel Orientation="Vertical" Width="660" Margin="10,0,0,0">
-                <StackPanel Orientation="Vertical">
-                    <StackPanel Orientation="Horizontal">
-                            <Label Width="550">Hits</Label>
+                        </Label>
+                        <Label Grid.Row="8" Grid.Column="1" x:Name="cb_Trophy">
+
+                        </Label>
+                        <TextBox Grid.Row="9" Grid.Column="1" x:Name="txt_Score" >0</TextBox>
+                        <TextBox Grid.Row="10" Grid.Column="1" x:Name="txt_XP" >0</TextBox>
+                        <TextBox Grid.Row="11" Grid.Column="1" x:Name="txt_Money" >0</TextBox>
+                        <TextBox Grid.Row="12" Grid.Column="1" x:Name="txt_SessionPt" >0</TextBox>
+                    </Grid>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Width="660" Margin="10,0,0,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Width="550" Content="{Binding lbl_hit}"></Label>
                         </StackPanel>
-                        
+
                         <Border BorderThickness="1" BorderBrush="Black" CornerRadius="2">
                             <StackPanel Orientation="Vertical" Background="White">
-                                    <Grid Background="Azure">
-                                        <Grid.RowDefinitions>
-                                            <RowDefinition Height="30"></RowDefinition>
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="50"></ColumnDefinition>
-                                            <ColumnDefinition Width="170"></ColumnDefinition>
-                                            <ColumnDefinition Width="170"></ColumnDefinition>
-                                            <ColumnDefinition Width="80"></ColumnDefinition>
-                                            <ColumnDefinition Width="80"></ColumnDefinition>
-                                            <ColumnDefinition Width="80"></ColumnDefinition>
-                                        </Grid.ColumnDefinitions>
-                                        <Label Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Right">#</Label>
-                                        <Label Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Right">Weapon</Label>
-                                        <Label Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Right">Ammunition</Label>
-                                        <Label Grid.Row="0" Grid.Column="3" HorizontalContentAlignment="Right">Distance</Label>
-                                        <Label Grid.Row="0" Grid.Column="4" HorizontalContentAlignment="Right">Weaponpt.</Label>
-                                        <Label Grid.Row="0" Grid.Column="5" HorizontalContentAlignment="Right">Damage</Label>
-                                    </Grid>
+                                <Grid Background="Azure">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="170"></ColumnDefinition>
+                                        <ColumnDefinition Width="170"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                        <ColumnDefinition Width="80"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" HorizontalContentAlignment="Right">#</Label>
+                                    <Label Grid.Row="0" Grid.Column="1" HorizontalContentAlignment="Right" Content="{Binding lbl_weapon}"></Label>
+                                    <Label Grid.Row="0" Grid.Column="2" HorizontalContentAlignment="Right" Content="{Binding lbl_ammunition}"></Label>
+                                    <Label Grid.Row="0" Grid.Column="3" HorizontalContentAlignment="Right" Content="{Binding lbl_shoot_distance}"></Label>
+                                    <Label Grid.Row="0" Grid.Column="4" HorizontalContentAlignment="Right" Content="{Binding lbl_weaponPt}"></Label>
+                                    <Label Grid.Row="0" Grid.Column="5" HorizontalContentAlignment="Right" Content="{Binding lbl_damage}"></Label>
+                                </Grid>
                                 <ScrollViewer CanContentScroll="True" Height="120">
                                     <StackPanel Orientation="Vertical" x:Name="sp_Hits">
-                                        
+
                                     </StackPanel>
                                 </ScrollViewer>
                             </StackPanel>
                         </Border>
-                    
-                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
-                        <StackPanel Orientation="Vertical">
-                            <Label>True Score</Label>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="30"></RowDefinition>
-                                    <RowDefinition Height="30"></RowDefinition>
-                                    <RowDefinition Height="30"></RowDefinition>
-                                    <RowDefinition Height="30"></RowDefinition>
-                                    <RowDefinition Height="30"></RowDefinition>
-                                    <RowDefinition Height="30"></RowDefinition>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="50"></ColumnDefinition>
-                                    <ColumnDefinition Width="100"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Row="0" Grid.Column="0">trueA</Label>
-                                <Label Grid.Row="1" Grid.Column="0">trueB</Label>
-                                <Label Grid.Row="2" Grid.Column="0">trueC</Label>
-                                <Label Grid.Row="3" Grid.Column="0">trueD</Label>
-                                <Label Grid.Row="4" Grid.Column="0">trueE</Label>
-                                <Label Grid.Row="5" Grid.Column="0">trueF</Label>
-                                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txt_trueA" >0</TextBox>
-                                <TextBox Grid.Row="1" Grid.Column="1" x:Name="txt_trueB" >0</TextBox>
-                                <TextBox Grid.Row="2" Grid.Column="1" x:Name="txt_trueC" >0</TextBox>
-                                <TextBox Grid.Row="3" Grid.Column="1" x:Name="txt_trueD" >0</TextBox>
-                                <TextBox Grid.Row="4" Grid.Column="1" x:Name="txt_trueE" >0</TextBox>
-                                <TextBox Grid.Row="5" Grid.Column="1" x:Name="txt_trueF" >0</TextBox>
-                            </Grid>
-                            
-                        </StackPanel>
-                        <StackPanel Orientation="Vertical" Width="350" Margin="0,0,0,0">
-                            <Label>Note</Label>
-                            <TextBox x:Name="txtBl_Note" Height="176"></TextBox>
+
+                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                            <StackPanel Orientation="Vertical">
+                                <Label Content="{Binding lbl_true_score}"></Label>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                        <RowDefinition Height="30"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="100"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" Grid.Column="0" Content="{Binding lbl_trueA}"></Label>
+                                    <Label Grid.Row="1" Grid.Column="0" Content="{Binding lbl_trueB}"></Label>
+                                    <Label Grid.Row="2" Grid.Column="0" Content="{Binding lbl_trueC}"></Label>
+                                    <Label Grid.Row="3" Grid.Column="0" Content="{Binding lbl_trueD}"></Label>
+                                    <Label Grid.Row="4" Grid.Column="0" Content="{Binding lbl_trueE}"></Label>
+                                    <Label Grid.Row="5" Grid.Column="0" Content="{Binding lbl_trueF}"></Label>
+                                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="txt_trueA" >0</TextBox>
+                                    <TextBox Grid.Row="1" Grid.Column="1" x:Name="txt_trueB" >0</TextBox>
+                                    <TextBox Grid.Row="2" Grid.Column="1" x:Name="txt_trueC" >0</TextBox>
+                                    <TextBox Grid.Row="3" Grid.Column="1" x:Name="txt_trueD" >0</TextBox>
+                                    <TextBox Grid.Row="4" Grid.Column="1" x:Name="txt_trueE" >0</TextBox>
+                                    <TextBox Grid.Row="5" Grid.Column="1" x:Name="txt_trueF" >0</TextBox>
+                                </Grid>
+
+                            </StackPanel>
+                            <StackPanel Orientation="Vertical" Width="350" Margin="0,0,0,0">
+                                <Label Content="{Binding lbl_note}"></Label>
+                                <TextBox x:Name="txtBl_Note" Height="176"></TextBox>
+                            </StackPanel>
                         </StackPanel>
                     </StackPanel>
+
                 </StackPanel>
-                
             </StackPanel>
-        </StackPanel>
         </Border>
     </StackPanel>
 

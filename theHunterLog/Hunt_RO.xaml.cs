@@ -29,10 +29,12 @@ namespace theHunterLog
 
         public Hunt_RO()
         {
+            this.DataContext = Main.lang;
             InitializeComponent();
         }
         public Hunt_RO(Hunt h, TrueScore t)
         {
+            this.DataContext = Main.lang;
             InitializeComponent();
             this.Top = Properties.Settings.Default.Hunt_ROWindowTop;
             this.Left = Properties.Settings.Default.Hunt_ROWindowLeft;

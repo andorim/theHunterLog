@@ -23,6 +23,7 @@ namespace theHunterLog
     {
         public Log()
         {
+            this.DataContext = Main.lang;
             InitializeComponent();
             this.Top = Properties.Settings.Default.LogWindowTop;
             this.Left = Properties.Settings.Default.LogWindowLeft;

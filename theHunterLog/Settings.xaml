@@ -8,8 +8,8 @@
         Title="theHunterLog: Settings" Height="190" Width="400" ResizeMode="NoResize">
 
     <StackPanel>
-        <Button Height="50" x:Name="btn_Language">Language</Button>
-        <Button Height="50" x:Name="btn_DeleteAll">Delete all Data</Button>
-        <Button Height="50" x:Name="btn_Close" Click="btn_Close_Click">Close Settings</Button>
+        <Button Height="50" x:Name="btn_Language" Content="{Binding btn_language}"></Button>
+        <Button Height="50" x:Name="btn_DeleteAll" Content="{Binding btn_delete_all}"></Button>
+        <Button Height="50" x:Name="btn_Close" Click="btn_Close_Click" Content="{Binding btn_close_settings}"></Button>
     </StackPanel>
 </Window>

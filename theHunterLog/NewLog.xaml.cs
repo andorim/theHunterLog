@@ -27,6 +27,7 @@ namespace theHunterLog
         public List<ControlHitList> hits;
         public NewLog()
         {
+            this.DataContext = Main.lang;
             InitializeComponent();
             this.Top = Properties.Settings.Default.NewLogWindowTop;
             this.Left = Properties.Settings.Default.NewLogWindowLeft;

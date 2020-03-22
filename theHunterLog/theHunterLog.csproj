@@ -122,6 +122,7 @@
     </Compile>
     <Compile Include="Database\FunktionClasses\DatabaseTools.cs" />
     <Compile Include="Database\ObjectClasses\Sex.cs" />
+    <Compile Include="Database\ObjectClasses\Lang_String.cs" />
     <Compile Include="Database\ObjectClasses\Weapon.cs" />
     <Compile Include="Database\ObjectClasses\Ammunition.cs" />
     <Compile Include="Database\ObjectClasses\Difficulty.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="Database\ObjectClasses\TrophyOrgane.cs" />
     <Compile Include="Database\ObjectClasses\TrueScore.cs" />
     <Compile Include="KeyboardListener.cs" />
+    <Compile Include="Language.cs" />
     <Compile Include="Log.xaml.cs">
       <DependentUpon>Log.xaml</DependentUpon>
     </Compile>

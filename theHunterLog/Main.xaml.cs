@@ -31,11 +31,14 @@ namespace theHunterLog
         public static Hunt_RO hunt_RO;
         Boolean isHidden;
 
+        public static Language lang;
+
         public static int sessionHunts;
         public Main()
         {
             Database.FunktionClasses.DatabaseTools.CreateSystemTables();
             Database.FunktionClasses.DatabaseTools.CreateUserTables();
+            lang = new Language();
             InitializeComponent();
             settings = new Settings();
             settings.Close();

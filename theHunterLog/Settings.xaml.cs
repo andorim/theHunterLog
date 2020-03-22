@@ -21,6 +21,7 @@ namespace theHunterLog
     {
         public Settings()
         {
+            this.DataContext = Main.lang;
             InitializeComponent();
             this.Top = Properties.Settings.Default.SettingsWindowTop;
             this.Left = Properties.Settings.Default.SettingsWindowLeft;
