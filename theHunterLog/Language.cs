@@ -133,7 +133,6 @@ namespace theHunterLog
             lbl_hotkey = Lang_String.GetStringById("lbl_hotkey");
             warning_Close_App = Lang_String.GetStringById("warning_Close_App");
             warning_Save_Log = Lang_String.GetStringById("warning_Save_Log");
-
         }
     }
 }
