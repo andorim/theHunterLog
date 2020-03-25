@@ -121,8 +121,11 @@
       <DependentUpon>ControlHunt.xaml</DependentUpon>
     </Compile>
     <Compile Include="Database\FunktionClasses\DatabaseTools.cs" />
+    <Compile Include="Database\FunktionClasses\DatabaseUpdates.cs" />
+    <Compile Include="Database\ObjectClasses\Map.cs" />
     <Compile Include="Database\ObjectClasses\Sex.cs" />
     <Compile Include="Database\ObjectClasses\Lang_String.cs" />
+    <Compile Include="Database\ObjectClasses\Version.cs" />
     <Compile Include="Database\ObjectClasses\Weapon.cs" />
     <Compile Include="Database\ObjectClasses\Ammunition.cs" />
     <Compile Include="Database\ObjectClasses\Difficulty.cs" />

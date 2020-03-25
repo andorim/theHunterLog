@@ -36,6 +36,7 @@ namespace theHunterLog
         public static int sessionHunts;
         public Main()
         {
+            
             Database.FunktionClasses.DatabaseTools.CreateSystemTables();
             Database.FunktionClasses.DatabaseTools.CreateUserTables();
             lang = new Language();
@@ -70,10 +71,23 @@ namespace theHunterLog
             DragMove();
         }
 
+
         private void txt_Hide_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             HideClick();
             
+        }
+        public static void Reload()
+        {
+            TryClose(menu);
+            TryClose(settings);
+            TryClose(newLog);
+            TryClose(log);
+            TryClose(top);
+            TryClose(hunt_RO);
+            Config.Reload();
+            Main.main = new Main();
+
         }
         public void HideClick()
         {
@@ -131,6 +145,23 @@ namespace theHunterLog
             catch (System.NullReferenceException ex)
             {
                 isHidden = !isHidden;
+            }
+        }
+        private static void TryClose(object win)
+        {
+            try
+            {
+                Window w = (Window)win;
+                w.Close();
+                w.Topmost = true;
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                
+            }
+            catch (System.NullReferenceException ex)
+            {
+                
             }
         }
 

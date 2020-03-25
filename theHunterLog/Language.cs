@@ -10,6 +10,11 @@ namespace theHunterLog
 {
     public class Language
     {
+        /*
+        btn_save_settings
+        lbl_hotkey
+
+       */
         // Main Menu //
         public string btn_newLog { get; set; }
         public string btn_showLog { get; set; }
@@ -19,6 +24,7 @@ namespace theHunterLog
         public string btn_exit { get; set; }
 
         // New Log * Hunt_RO //
+        public string lbl_Map { get; set; }
         public string newLog_Title { get; set; }
         public string btn_save_new { get; set; }
         public string btn_save_exit { get; set; }
@@ -61,9 +67,15 @@ namespace theHunterLog
         public string btn_language { get; set; }
         public string btn_delete_all { get; set; }
         public string btn_close_settings { get; set; }
+        public string btn_save_settings { get; set; }
+        public string lbl_hotkey { get; set; }
 
         // Top //
         public string btn_all { get; set; }
+
+        // Warnings //
+        public string warning_Close_App { get; set; }
+        public string warning_Save_Log { get; set; }
 
         public Language()
         {
@@ -71,7 +83,8 @@ namespace theHunterLog
         }
         public void LoadLanguage()
         {
-            LoadDefaults();
+            //LoadDefaults();
+            lbl_Map = Lang_String.GetStringById("lbl_Map");
             btn_newLog = Lang_String.GetStringById("btn_newLog");
             btn_showLog = Lang_String.GetStringById("btn_showLog");
             btn_top = Lang_String.GetStringById("btn_top");
@@ -116,57 +129,11 @@ namespace theHunterLog
             btn_delete_all = Lang_String.GetStringById("btn_delete_all");
             btn_close_settings = Lang_String.GetStringById("btn_close_settings");
             btn_all = Lang_String.GetStringById("btn_all");
+            btn_save_settings = Lang_String.GetStringById("btn_save_settings");
+            lbl_hotkey = Lang_String.GetStringById("lbl_hotkey");
+            warning_Close_App = Lang_String.GetStringById("warning_Close_App");
+            warning_Save_Log = Lang_String.GetStringById("warning_Save_Log");
 
         }
-        
-        public void LoadDefaults()
-        {
-            btn_newLog = "btn_newLog";
-            btn_showLog = "btn_showLog";
-            btn_top = "btn_top";
-            btn_search = "btn_search";
-            btn_settings = "btn_settings";
-            btn_exit = "btn_exit";
-            newLog_Title = "newLog_Title";
-            btn_save_new = "btn_save_new";
-            btn_save_exit = "btn_save_exit";
-            btn_cancel = "btn_cancel";
-            btn_new_hit = "btn_new_hit";
-            lbl_animal = "lbl_animal";
-            lbl_sex = "lbl_sex";
-            lbl_weight = "lbl_weight";
-            lbl_fur = "lbl_fur";
-            lbl_distance = "lbl_distance";
-            lbl_difficulty = "lbl_difficulty";
-            lbl_trophy_kind = "lbl_trophy_kind";
-            lbl_trophy_organ = "lbl_trophy_organ";
-            lbl_trophy = "lbl_trophy";
-            lbl_trophy_score = "lbl_trophy_score";
-            lbl_xp = "lbl_xp";
-            lbl_money = "lbl_money";
-            lbl_sessionPt = "lbl_sessionPt";
-            lbl_weapon = "lbl_weapon";
-            lbl_ammunition = "lbl_ammunation";
-            lbl_shoot_distance = "lbl_shoot_distance";
-            lbl_weaponPt = "lbl_weaponPt";
-            lbl_damage = "lbl_damage";
-            lbl_true_score = "lbl_true_score";
-            lbl_note = "lbl_note";
-            lbl_trueA = "lbl_trueA";
-            lbl_trueB = "lbl_trueB";
-            lbl_trueC = "lbl_trueC";
-            lbl_trueD = "lbl_trueD";
-            lbl_trueE = "lbl_trueE";
-            lbl_trueF = "lbl_trueF";
-            lbl_date = "lbl_date";
-            lbl_species = "lbl_species";
-            lbl_score = "lbl_score";
-            btn_language = "btn_language";
-            btn_delete_all = "btn_deleta_all";
-            btn_close_settings = "btn_close_settings";
-            btn_all = "btn_all";
-        }
-        
-
     }
 }

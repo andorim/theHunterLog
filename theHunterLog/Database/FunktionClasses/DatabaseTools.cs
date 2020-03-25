@@ -33,11 +33,14 @@ namespace theHunterLog.Database.FunktionClasses
             TrophyOrgane.CreateTable();
             TrueScore.CreateTable();
             Weapon.CreateTable();
+            Map.CreateTable();
         }
         public static void CreateUserTables()
         {
+            
             Hit.CreateTable();
             Hunt.CreateTable();
+            DatabaseUpdates.DoUpgrades();
         }
 
 

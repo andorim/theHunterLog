@@ -31,13 +31,14 @@ namespace theHunterLog.Database.ObjectClasses
         public int sessionPt { get; set; }
         public string timestamp { get; set; }
         public string note { get; set; }
+        public int mapId { get; set; }
 
         public Hunt()
         {
             
         }
 
-        public Hunt(int speciesID, int sexID, double weight, int furID, double distance, int difficultyID, int trophyKindID, int trophyOrganeID, int trophyID, double trophyScore, int trueScoreID, int ep, int money, int sessionPt, string note)
+        public Hunt(int speciesID, int sexID, double weight, int furID, double distance, int difficultyID, int trophyKindID, int trophyOrganeID, int trophyID, double trophyScore, int trueScoreID, int ep, int money, int sessionPt, string note, int mapId)
         {
             this.speciesID = speciesID;
             this.sexID = sexID;
@@ -55,6 +56,7 @@ namespace theHunterLog.Database.ObjectClasses
             this.sessionPt = sessionPt;
             this.timestamp = DateTime.Now.ToString();
             this.note = note;
+            this.mapId = mapId;
         }
 
         static public void CreateTable()

@@ -17,14 +17,10 @@ namespace theHunterLog
 
 
 
-        public static bool LoadConfigFromFile()
+        public static void Reload()
         {
-            
-            return true;
-        }
-        public static bool SetConfig()
-        {
-            return true;
+            language = Properties.Settings.Default.Language;
+            databaseUriSystem = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\strings\" + language + "\\Systemdata.sqlite";
         }
     }
 }

@@ -79,7 +79,7 @@ namespace theHunterLog
         }
         private Boolean WarningOnClose()
         {
-            String msg = "Sind Sie sicher?\nAlle Fenster werden geschlossen und nicht gespeicherte Daten gehen Verloren!";
+            String msg = Main.lang.warning_Close_App;
             MessageBoxResult result = MessageBox.Show(msg, "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
             if (result == MessageBoxResult.No)
             {

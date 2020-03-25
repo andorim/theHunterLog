@@ -31,10 +31,18 @@ namespace theHunterLog.Database.ObjectClasses
 
         public static string GetStringById(string id)
         {
-            SQLiteConnection db = DatabaseTools.getSystemConnection();
-            Lang_String result = db.Query<Lang_String>("SELECT name FROM Lang_String WHERE id='"+id+"'")[0];
-            db.Close();
-            return result.name;
+            try
+            {
+                SQLiteConnection db = DatabaseTools.getSystemConnection();
+                Lang_String result = db.Query<Lang_String>("SELECT name FROM Lang_String WHERE id='" + id + "'")[0];
+                db.Close();
+                return result.name;
+            }
+            catch
+            {
+                return id;
+            }
+            
         }
     }
 }

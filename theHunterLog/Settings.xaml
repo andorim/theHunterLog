@@ -5,11 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:theHunterLog"
         mc:Ignorable="d"
+        WindowStyle="None"
         Title="theHunterLog: Settings" Height="190" Width="400" ResizeMode="NoResize">
-
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Height" Value="30"></Setter>
+        </Style>
+    </Window.Resources>
     <StackPanel>
-        <Button Height="50" x:Name="btn_Language" Content="{Binding btn_language}"></Button>
+        <Label Content="{Binding btn_settings}" MouseDown="Label_MouseDown" ></Label>
+        <StackPanel Orientation="Horizontal">
+            <Label Width="200" Content="{Binding btn_language}"></Label>
+            <ComboBox Width="200" x:Name="cb_language">
+                <ComboBoxItem Content="Deutsch"></ComboBoxItem>
+                <ComboBoxItem Content="English"></ComboBoxItem>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <Label Width="200" Content="{Binding lbl_hotkey}"></Label>
+            <TextBox IsReadOnly="true" Width="200" MouseDoubleClick="TextBox_MouseDoubleClick" x:Name="tb_hotkey"></TextBox>
+        </StackPanel>
         <Button Height="50" x:Name="btn_DeleteAll" Content="{Binding btn_delete_all}"></Button>
-        <Button Height="50" x:Name="btn_Close" Click="btn_Close_Click" Content="{Binding btn_close_settings}"></Button>
+        <StackPanel Orientation="Horizontal" Width="400">
+            <Button Height="50" Width="200" x:Name="btn_Close" Click="btn_Close_Click" Content="{Binding btn_close_settings}"></Button>
+            <Button Height="50" Width="200" x:Name="btn_Save" Content="{Binding btn_save_settings}" Click="btn_Save_Click" ></Button>
+        </StackPanel>
+
     </StackPanel>
 </Window>

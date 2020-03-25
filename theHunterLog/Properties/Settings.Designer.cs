@@ -226,5 +226,17 @@ namespace theHunterLog.Properties {
                 this["Language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Scroll")]
+        public string HideKey {
+            get {
+                return ((string)(this["HideKey"]));
+            }
+            set {
+                this["HideKey"] = value;
+            }
+        }
     }
 }

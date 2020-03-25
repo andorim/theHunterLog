@@ -25,6 +25,8 @@ namespace theHunterLog
     public partial class NewLog : Window
     {
         public List<ControlHitList> hits;
+        private static int lastMapIndex;
+
         public NewLog()
         {
             this.DataContext = Main.lang;
@@ -67,38 +69,65 @@ namespace theHunterLog
 
         private void btn_SaveAndNew_Click(object sender, RoutedEventArgs e)
         {
-            Save();
-            CustomClose();
-            Main.newLog = new NewLog();
-            Main.newLog.Show();
-        }
-        private void Save()
-        {
-            int trueScoreID = new TrueScore(double.Parse(txt_trueA.Text), double.Parse(txt_trueB.Text), double.Parse(txt_trueC.Text), double.Parse(txt_trueD.Text), double.Parse(txt_trueE.Text), double.Parse(txt_trueF.Text)).Insert();                                   
-            ComboBoxItem cbISp = (ComboBoxItem)cb_Animal.SelectedItem;
-            ComboBoxItem cbIS = (ComboBoxItem)cb_Sex.SelectedItem;
-            ComboBoxItem cbIF = (ComboBoxItem)cb_Fur.SelectedItem;
-            ComboBoxItem cbIDif = (ComboBoxItem)cb_Difficulty.SelectedItem;
-            ComboBoxItem cbITrK = (ComboBoxItem)cb_TrophyKind.SelectedItem;
-            ComboBoxItem cbITrO = (ComboBoxItem)cb_TrophyOrgan.SelectedItem;
-            ComboBoxItem cbITr = (ComboBoxItem)cb_Trophy.SelectedItem;
-            int huntId = new Hunt(int.Parse(cbISp.Tag.ToString()), int.Parse(cbIS.Tag.ToString()), double.Parse(txt_Weight.Text), int.Parse(cbIF.Tag.ToString()), double.Parse(txt_Distance.Text), int.Parse(cbIDif.Tag.ToString()), int.Parse(cbITrK.Tag.ToString()), int.Parse(cbITrO.Tag.ToString()), int.Parse(cbITr.Tag.ToString()), double.Parse(txt_Score.Text), trueScoreID, int.Parse(txt_XP.Text), int.Parse(txt_Money.Text), int.Parse(txt_SessionPt.Text), txtBl_Note.Text).Insert();
-            foreach( ControlHitList h in hits)
+            if (Save())
             {
-                ComboBoxItem cbIW = (ComboBoxItem)h.cb_Weapon.SelectedItem;
-                ComboBoxItem cbIA = (ComboBoxItem)h.cb_Ammo.SelectedItem;
-                new Hit(huntId, int.Parse(h.txt_No.Text), int.Parse(cbIW.Tag.ToString()), int.Parse(cbIA.Tag.ToString()), double.Parse(h.txt_Distance.Text), double.Parse(h.txt_WeaponPt.Text), int.Parse(h.txt_Damage.Text)).Insert();
+                CustomClose();
+                Main.newLog = new NewLog();
+                Main.newLog.Show();
             }
-            Main.main.countHunts();
+            
+        }
+        private bool Save()
+        {
+            try
+            {
+                int trueScoreID = new TrueScore(double.Parse(txt_trueA.Text), double.Parse(txt_trueB.Text), double.Parse(txt_trueC.Text), double.Parse(txt_trueD.Text), double.Parse(txt_trueE.Text), double.Parse(txt_trueF.Text)).Insert();
+                ComboBoxItem cbIM = (ComboBoxItem)cb_map.SelectedItem;
+                ComboBoxItem cbISp = (ComboBoxItem)cb_Animal.SelectedItem;
+                ComboBoxItem cbIS = (ComboBoxItem)cb_Sex.SelectedItem;
+                ComboBoxItem cbIF = (ComboBoxItem)cb_Fur.SelectedItem;
+                ComboBoxItem cbIDif = (ComboBoxItem)cb_Difficulty.SelectedItem;
+                ComboBoxItem cbITrK = (ComboBoxItem)cb_TrophyKind.SelectedItem;
+                ComboBoxItem cbITrO = (ComboBoxItem)cb_TrophyOrgan.SelectedItem;
+                ComboBoxItem cbITr = (ComboBoxItem)cb_Trophy.SelectedItem;
+                int huntId = new Hunt(int.Parse(cbISp.Tag.ToString()), int.Parse(cbIS.Tag.ToString()), double.Parse(txt_Weight.Text), int.Parse(cbIF.Tag.ToString()), double.Parse(txt_Distance.Text), int.Parse(cbIDif.Tag.ToString()), int.Parse(cbITrK.Tag.ToString()), int.Parse(cbITrO.Tag.ToString()), int.Parse(cbITr.Tag.ToString()), double.Parse(txt_Score.Text), trueScoreID, int.Parse(txt_XP.Text), int.Parse(txt_Money.Text), int.Parse(txt_SessionPt.Text), txtBl_Note.Text, int.Parse(cbIM.Tag.ToString())).Insert();
+                foreach (ControlHitList h in hits)
+                {
+                    ComboBoxItem cbIW = (ComboBoxItem)h.cb_Weapon.SelectedItem;
+                    ComboBoxItem cbIA = (ComboBoxItem)h.cb_Ammo.SelectedItem;
+                    new Hit(huntId, int.Parse(h.txt_No.Text), int.Parse(cbIW.Tag.ToString()), int.Parse(cbIA.Tag.ToString()), double.Parse(h.txt_Distance.Text), double.Parse(h.txt_WeaponPt.Text), int.Parse(h.txt_Damage.Text)).Insert();
+                }
+                Main.main.countHunts();
+                lastMapIndex = cb_map.SelectedIndex;
+                return true;
+            }
+            catch
+            {
+                String msg = Main.lang.warning_Save_Log;
+                MessageBoxResult result = MessageBox.Show(msg, "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return false;
+            }
+            
         }
 
         private void btn_SaveAndExit_Click(object sender, RoutedEventArgs e)
         {
-            Save();
-            CustomClose();
+            if(Save())
+                CustomClose();
         }
         private void FillComboBoxesDe()
         {
+            IEnumerable<Map> ieM = Map.GetAll();
+            foreach (Map ob in ieM)
+            {
+                ComboBoxItem cbM = new ComboBoxItem();
+                cbM.Content = ob.name;
+                cbM.Tag = ob.id;
+                cb_map.Items.Add(cbM);
+            }
+            if (lastMapIndex >= -1)
+                cb_map.SelectedIndex = lastMapIndex;
+
             IEnumerable<Species> ieSp = Species.GetAll();
             foreach (Species ob in ieSp)
             {

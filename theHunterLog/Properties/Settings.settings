@@ -53,5 +53,8 @@
     <Setting Name="Language" Type="System.String" Scope="User">
       <Value Profile="(Default)">en</Value>
     </Setting>
+    <Setting Name="HideKey" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Scroll</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

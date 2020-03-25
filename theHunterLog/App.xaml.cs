@@ -20,6 +20,7 @@ namespace theHunterLog
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            
             KListener.KeyDown += new RawKeyEventHandler(KListener_KeyDown);
         }
         private void Application_Exit(object sender, ExitEventArgs e)
@@ -41,7 +42,7 @@ namespace theHunterLog
         /// </summary>
         public void KListener_KeyDown(object sender, RawKeyEventArgs args)
         {
-            if (args.Key.ToString() == "Scroll")
+            if (args.Key.ToString() == theHunterLog.Properties.Settings.Default.HideKey)
             {
                 this.Dispatcher.BeginInvoke((System.Threading.ThreadStart)delegate
                 {
