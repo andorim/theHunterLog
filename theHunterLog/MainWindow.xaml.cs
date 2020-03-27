@@ -67,8 +67,16 @@ namespace theHunterLog
 
         private void btn_NewLog_Click(object sender, RoutedEventArgs e)
         {
-            Main.newLog = new NewLog();
-            Main.newLog.Show();
+            if (Main.newLog.isClosed)
+            {
+                Main.newLog = new NewLog();
+                Main.newLog.Show();
+            }
+            else
+            {
+                Main.newLog.Activate();
+            }
+            
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
@@ -93,20 +101,44 @@ namespace theHunterLog
 
         private void btn_Settings_Click(object sender, RoutedEventArgs e)
         {
-            Main.settings = new Settings();
-            Main.settings.Show();
+            if (Main.settings.isClosed)
+            {
+                Main.settings = new Settings();
+                Main.settings.Show();
+            }
+            else
+            {
+                Main.settings.Activate();
+            }
+            
         }
 
         private void btn_ShowLogs_Click(object sender, RoutedEventArgs e)
         {
-            Main.log = new Log();
-            Main.log.Show();
+            if (Main.log.isClosed)
+            {
+                Main.log = new Log();
+                Main.log.Show();
+            }
+            else
+            {
+                Main.log.Activate();
+            }
+            
         }
 
         private void btn_Top_Click(object sender, RoutedEventArgs e)
         {
-            Main.top = new Top();
-            Main.top.Show();
+            if (Main.top.isClosed)
+            {
+                Main.top = new Top();
+                Main.top.Show();
+            }
+            else
+            {
+                Main.top.Activate();
+            }
+            
         }
     }
 }

@@ -27,9 +27,12 @@ namespace theHunterLog
         public List<ControlHitList> hits;
         private static int lastMapIndex;
 
+        public bool isClosed { get; private set; }
+
         public NewLog()
         {
             this.DataContext = Main.lang;
+            isClosed = false;
             InitializeComponent();
             this.Top = Properties.Settings.Default.NewLogWindowTop;
             this.Left = Properties.Settings.Default.NewLogWindowLeft;
@@ -232,6 +235,11 @@ namespace theHunterLog
                 if (ob.id == 1)
                     cb_Fur.SelectedItem = cbI;
             }
+        }
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            isClosed = true;
         }
     }
 }

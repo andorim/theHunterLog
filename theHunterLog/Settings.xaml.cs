@@ -21,11 +21,14 @@ namespace theHunterLog
     {
         KeyboardListener KListener;
 
+        public bool isClosed { get; private set; }
+
         string lang;
         string hotkey;
         public Settings()
         {
             this.DataContext = Main.lang;
+            this.isClosed = false;
             InitializeComponent();
             this.Top = Properties.Settings.Default.SettingsWindowTop;
             this.Left = Properties.Settings.Default.SettingsWindowLeft;
@@ -103,6 +106,11 @@ namespace theHunterLog
                 Properties.Settings.Default.Language = "en";
             }
             Main.Reload();
+        }
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            isClosed = true;
         }
     }
 }

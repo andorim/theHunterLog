@@ -21,9 +21,12 @@ namespace theHunterLog
     /// </summary>
     public partial class Top : Window
     {
+        public bool isClosed { get; private set; }
+
         public Top()
         {
             this.DataContext = Main.lang;
+            isClosed = false;
             InitializeComponent();
             this.Top = Properties.Settings.Default.TopWindowTop;
             this.Left = Properties.Settings.Default.TopWindowLeft;
@@ -58,6 +61,11 @@ namespace theHunterLog
         {
             Properties.Settings.Default.TopWindowTop = this.Top;
             Properties.Settings.Default.TopWindowLeft = this.Left;
+        }
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            isClosed = true;
         }
     }
 }
