@@ -35,6 +35,7 @@ namespace theHunterLog.Controls
             trueScore = t;
             InitializeComponent();
             lb_Date.Content = h.timestamp;
+            lb_Map.Content = Map.GetNameFromID(h.mapId);
             lb_Species.Content = Species.GetNameFromID(h.speciesID);
             lb_trScore.Content = h.trophyScore;
             lb_trKind.Content = TrophyKind.GetNameFromID(h.trophyKindID);

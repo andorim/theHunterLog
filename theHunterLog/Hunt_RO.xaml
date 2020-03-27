@@ -23,7 +23,8 @@
     </Window.Resources>
     <StackPanel Orientation="Vertical" Margin="5,5,5,5" Background="AliceBlue">
         <StackPanel Orientation="Horizontal">
-            <Label Width="630">Hunt</Label>
+            <Label Width="117" Content="{Binding lbl_Map}"></Label>
+            <Label Width="180" x:Name="lbl_map"></Label>
 
         </StackPanel>
         <Border BorderBrush="Black" BorderThickness="1">

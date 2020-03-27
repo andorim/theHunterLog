@@ -38,6 +38,7 @@ namespace theHunterLog
             InitializeComponent();
             this.Top = Properties.Settings.Default.Hunt_ROWindowTop;
             this.Left = Properties.Settings.Default.Hunt_ROWindowLeft;
+            lbl_map.Content = Map.GetNameFromID(h.mapId);
             cb_Animal.Content = Species.GetNameFromID(h.speciesID);
             cb_Sex.Content = Sex.GetNameFromID(h.sexID);
             txt_Weight.Text = h.weight.ToString();

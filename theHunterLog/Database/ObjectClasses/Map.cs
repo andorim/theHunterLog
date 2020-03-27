@@ -31,9 +31,17 @@ namespace theHunterLog.Database.ObjectClasses
         }
         public static string GetNameFromID(int i)
         {
-            SQLiteConnection db = DatabaseTools.getSystemConnection();
-            Map sp = db.Query<Map>("SELECT name FROM Map WHERE id = " + i)[0];
-            return sp.name;
+            if (i != 0)
+            {
+                SQLiteConnection db = DatabaseTools.getSystemConnection();
+                Map sp = db.Query<Map>("SELECT name FROM Map WHERE id = " + i)[0];
+                return sp.name;
+            }
+            else
+            {
+                return " - ";
+            }
+            
         }
         public void Insert()
         {

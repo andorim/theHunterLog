@@ -34,11 +34,13 @@ namespace theHunterLog
             txt_No.Text = h.hitNo.ToString();
             ComboBoxItem cbI_W = new ComboBoxItem();
             cbI_W.Content = Weapon.GetNameFromID(h.weaponID);
+            cbI_W.Tag = h.weaponID;
             cb_Weapon.Items.Add(cbI_W);
             cb_Weapon.IsReadOnly = true;
             cb_Weapon.SelectedItem = cbI_W;
             ComboBoxItem cbI_A = new ComboBoxItem();
             cbI_A.Content = Ammunition.GetNameFromID(h.ammuID);
+            cbI_A.Tag = h.ammuID;
             cb_Ammo.Items.Add(cbI_A);
             cb_Ammo.IsReadOnly = true;
             cb_Ammo.SelectedItem = cbI_A;

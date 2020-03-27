@@ -25,6 +25,7 @@
                 <StackPanel>
                     <StackPanel Orientation="Horizontal" x:Name="sp_LogEntry" Background="AliceBlue">
                         <Label x:Name="lb_Date" Width="120" Content="{Binding lbl_date}"></Label>
+                        <Label x:Name="lb_Map" Width="120" Content="{Binding lbl_Map}"></Label>
                         <Label x:Name="lb_Species" Width="120" Content="{Binding lbl_species}"></Label>
                         <Label x:Name="lb_trScore" Width="70" HorizontalContentAlignment="Right" Content="{Binding lbl_score}"></Label>
                         <Label x:Name="lb_trKind" Width="100" Content="{Binding lbl_trophy_kind}"></Label>

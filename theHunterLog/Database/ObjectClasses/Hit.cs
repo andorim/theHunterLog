@@ -53,7 +53,7 @@ namespace theHunterLog.Database.ObjectClasses
         public static IEnumerable<Hit> GetHitsFromHuntId(int huntId)
         {
             SQLiteConnection db = DatabaseTools.getUserConnection();
-            IEnumerable<Hit> hits = db.Query<Hit>("SELECT * FROm Hit WHERE huntID=" + huntId+" ORDER BY hitNo");
+            IEnumerable<Hit> hits = db.Query<Hit>("SELECT * FROM Hit WHERE huntID=" + huntId+" ORDER BY hitNo");
             return hits;
         }
     }
