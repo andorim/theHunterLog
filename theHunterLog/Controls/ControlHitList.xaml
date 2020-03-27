@@ -25,7 +25,7 @@
                 <ColumnDefinition Width="80"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <TextBox Grid.Row="0" Grid.Column="0" x:Name="txt_No" GotFocus="txt_GotFocus"></TextBox>
-            <ComboBox Grid.Row="0" Grid.Column="1" x:Name="cb_Weapon"></ComboBox>
+            <ComboBox Grid.Row="0" Grid.Column="1" x:Name="cb_Weapon" SelectionChanged="cb_Weapon_SelectionChanged"></ComboBox>
             <ComboBox Grid.Row="0" Grid.Column="2" x:Name="cb_Ammo"></ComboBox>
             <TextBox Grid.Row="0" Grid.Column="3" x:Name="txt_Distance" GotFocus="txt_GotFocus">0</TextBox>
             <TextBox Grid.Row="0" Grid.Column="4" x:Name="txt_WeaponPt" GotFocus="txt_GotFocus">0</TextBox>

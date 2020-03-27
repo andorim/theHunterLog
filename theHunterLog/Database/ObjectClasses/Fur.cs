@@ -49,5 +49,13 @@ namespace theHunterLog.Database.ObjectClasses
             db.Close();
             return result;
         }
+
+        public static IEnumerable<Fur> GetFromSpeciesId(int speciesId)
+        {
+            SQLiteConnection db = DatabaseTools.getSystemConnection();
+            IEnumerable<Fur> result = db.Query<Fur>("SELECT Fur.id, Fur.name FROM Fur INNER JOIN fur_species ON fur.id = fur_species.furId WHERE speciesId = "+speciesId);
+            db.Close();
+            return result;
+        }
     }
 }

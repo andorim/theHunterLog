@@ -234,9 +234,6 @@
     <None Include="strings\en\Systemdata.sqlite">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Systemdata.sqlite">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="theHunterLog_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

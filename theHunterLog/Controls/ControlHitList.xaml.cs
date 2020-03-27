@@ -73,5 +73,19 @@ namespace theHunterLog
             TextBox txt = (TextBox)sender;
             txt.SelectAll();
         }
+
+        private void cb_Weapon_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cb_Ammo.Items.Clear();
+            ComboBoxItem cbW = (ComboBoxItem)cb_Weapon.SelectedItem;
+            IEnumerable<Ammunition> ieA = Ammunition.GetFromWeaponId(int.Parse(cbW.Tag.ToString()));
+            foreach (Ammunition ob in ieA)
+            {
+                ComboBoxItem cbI = new ComboBoxItem();
+                cbI.Content = ob.name;
+                cbI.Tag = ob.id;
+                cb_Ammo.Items.Add(cbI);
+            }
+        }
     }
 }

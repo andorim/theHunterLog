@@ -194,14 +194,44 @@ namespace theHunterLog
                 if (ob.id == 1)
                     cb_Trophy.SelectedItem = cbI;
             }
-
-
         }
 
         private void txt_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox txt = (TextBox)sender;
             txt.SelectAll();
+        }
+
+        private void cb_map_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cb_Animal.Items.Clear();
+            ComboBoxItem cbIM = (ComboBoxItem)cb_map.SelectedItem;
+            IEnumerable<Species> ieSp = Species.GetFromMapId(int.Parse(cbIM.Tag.ToString()));
+            foreach (Species ob in ieSp)
+            {
+                ComboBoxItem cbI = new ComboBoxItem();
+                cbI.Content = ob.name;
+                cbI.Tag = ob.id;
+                cb_Animal.Items.Add(cbI);
+            }
+        }
+
+        private void cb_Animal_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            cb_Fur.Items.Clear();
+            ComboBoxItem cbIA = (ComboBoxItem)cb_Animal.SelectedItem;
+            IEnumerable<Fur> ieF = Fur.GetFromSpeciesId(int.Parse(cbIA.Tag.ToString()));
+            foreach (Fur ob in ieF)
+            {
+                ComboBoxItem cbI = new ComboBoxItem();
+                cbI.Content = ob.name;
+
+                cbI.Tag = ob.id;
+
+                cb_Fur.Items.Add(cbI);
+                if (ob.id == 1)
+                    cb_Fur.SelectedItem = cbI;
+            }
         }
     }
 }

@@ -50,6 +50,14 @@ namespace theHunterLog.Database.ObjectClasses
             return result;
         }
 
+        public static IEnumerable<Species> GetFromMapId(int mapid)
+        {
+            SQLiteConnection db = DatabaseTools.getSystemConnection();
+            IEnumerable<Species> result = db.Query<Species>("SELECT Species.id, Species.name FROM Species INNER JOIN map_species ON species.id = map_species.speciesId WHERE mapId = "+mapid);
+            db.Close();
+            return result;
+        }
+
     }
    
 }
