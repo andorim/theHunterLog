@@ -12,7 +12,8 @@ namespace theHunterLog
     static class Config
     {
         public static string language = Properties.Settings.Default.Language;
-        public static string databaseUriUser = "Userdata.sqlite";
+        //public static string databaseUriUser = Environment.GetEnvironmentVariable("LocalAppData")+@"\theHunterLog\Userdata.sqlite";
+        public static string databaseUriUser = Environment.GetEnvironmentVariable("LocalAppData") + @"\theHunterLog\Debug\Userdata.sqlite";
         public static string databaseUriSystem = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName)+ @"\strings\"+language+"\\Systemdata.sqlite";
 
 

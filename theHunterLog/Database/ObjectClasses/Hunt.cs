@@ -93,6 +93,17 @@ namespace theHunterLog.Database.ObjectClasses
             
         }
 
+        public static IEnumerable<Hunt> GetHuntedSpeciesIDs()
+        {
+            IEnumerable<Hunt> huntedSpeciesIDs;
+            SQLiteConnection db = DatabaseTools.getUserConnection();
+
+            huntedSpeciesIDs = db.Query<Hunt>("SELECT speciesID FROM hunt GROUP BY speciesID");
+
+            return huntedSpeciesIDs;
+            
+        }
+
         public ControlHunt GetControlHunt()
         {
             return new ControlHunt(this, TrueScore.GetTrueScoreFromID(this.trueScoreID));

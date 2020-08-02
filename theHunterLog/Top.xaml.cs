@@ -35,14 +35,24 @@ namespace theHunterLog
         public void FillAnimalButtons()
         {
             IEnumerable<Species> species = Species.GetAll();
+            IEnumerable<Hunt> huntedSpeciesIDs = Hunt.GetHuntedSpeciesIDs();
 
             foreach (Species sp in species)
             {
-                Button btn = new Button();
-                btn.Tag = sp.id.ToString();
-                btn.Content = sp.name;
-                btn.Click += btn_Animal_Click;
-                sp_Animals.Children.Add(btn);
+                foreach(Hunt id in huntedSpeciesIDs)
+                {
+                    if(sp.id == id.speciesID)
+                    {
+                        Button btn = new Button();
+                        btn.Tag = sp.id.ToString();
+                        btn.Content = sp.name;
+                        btn.Click += btn_Animal_Click;
+                        sp_Animals.Children.Add(btn);
+                        break;
+                        
+                    }
+                }
+                
             }
         }
 
