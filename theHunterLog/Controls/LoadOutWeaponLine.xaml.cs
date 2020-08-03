@@ -80,6 +80,7 @@ namespace theHunterLog.Controls
         }
         public Loadout_Line GetLoadout_Line()
         {
+            
             Loadout_Line line = new Loadout_Line();
             ComboBoxItem cbI = (ComboBoxItem) cbWeapon.SelectedItem;
             line.weaponID = (int) cbI.Tag;

@@ -93,6 +93,10 @@ namespace theHunterLog
                 ComboBoxItem cbITrO = (ComboBoxItem)cb_TrophyOrgan.SelectedItem;
                 ComboBoxItem cbITr = (ComboBoxItem)cb_Trophy.SelectedItem;
                 int huntId = new Hunt(int.Parse(cbISp.Tag.ToString()), int.Parse(cbIS.Tag.ToString()), double.Parse(txt_Weight.Text), int.Parse(cbIF.Tag.ToString()), double.Parse(txt_Distance.Text), int.Parse(cbIDif.Tag.ToString()), int.Parse(cbITrK.Tag.ToString()), int.Parse(cbITrO.Tag.ToString()), int.Parse(cbITr.Tag.ToString()), double.Parse(txt_Score.Text), trueScoreID, int.Parse(txt_XP.Text), int.Parse(txt_Money.Text), int.Parse(txt_SessionPt.Text), txtBl_Note.Text, int.Parse(cbIM.Tag.ToString())).Insert();
+                if ( sp_Hits.Children.Count < 1)
+                {
+                    throw new Exception();
+                }
                 foreach (ControlHitList h in sp_Hits.Children)
                 {
                     ComboBoxItem cbIW = (ComboBoxItem)h.cb_Weapon.SelectedItem;

@@ -39,12 +39,22 @@ namespace theHunterLog
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            foreach( UIElement element in spWeapons.Children)
+            try
             {
-                LoadOutWeaponLine line = (LoadOutWeaponLine)element;
-                line.GetLoadout_Line().Insert();
+                Loadout_Line.Truncate();
+                foreach (UIElement element in spWeapons.Children)
+                {
+                    LoadOutWeaponLine line = (LoadOutWeaponLine)element;
+                    line.GetLoadout_Line().Insert();
+                }
+                this.Close();
             }
-            this.Close();
+            catch
+            {
+                String msg = Main.lang.warning_Save_Log;
+                MessageBoxResult result = MessageBox.Show(msg, "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)

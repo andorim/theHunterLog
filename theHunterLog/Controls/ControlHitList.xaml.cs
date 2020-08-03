@@ -84,14 +84,19 @@ namespace theHunterLog
 
         private void btn_DelLine_Click(object sender, RoutedEventArgs e)
         {
+            
             StackPanel panel = (StackPanel)this.VisualParent;
-            panel.Children.Remove(this);
-            int count = 0;
-            foreach(ControlHitList hit in panel.Children)
+            if(panel.Children.Count >= 2)
             {
-                count++;
-                hit.txt_No.Text = count.ToString();
+                panel.Children.Remove(this);
+                int count = 0;
+                foreach (ControlHitList hit in panel.Children)
+                {
+                    count++;
+                    hit.txt_No.Text = count.ToString();
+                }
             }
+            
 
         }
     }
