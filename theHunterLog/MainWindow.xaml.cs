@@ -140,5 +140,10 @@ namespace theHunterLog
             }
             
         }
+
+        private void btn_Loadout_Click(object sender, RoutedEventArgs e)
+        {
+            new LoadOut().Show();
+        }
     }
 }

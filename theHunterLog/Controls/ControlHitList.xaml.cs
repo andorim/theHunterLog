@@ -25,7 +25,7 @@ namespace theHunterLog
         public ControlHitList()
         {
             InitializeComponent();
-            FillComboboxesDe();
+            FillComboboxes();
         }
         public ControlHitList(Hit h)
         {
@@ -51,23 +51,15 @@ namespace theHunterLog
             txt_Damage.Text = h.dmg.ToString();
             txt_Damage.IsReadOnly = true;
         }
-        private void FillComboboxesDe()
+        private void FillComboboxes()
         {
-            IEnumerable<Weapon> ieW = Weapon.GetAll();
-            foreach (Weapon ob in ieW)
+            IEnumerable<Loadout_Line> loadout_lines = Loadout_Line.getAll();
+            foreach(Loadout_Line line in loadout_lines)
             {
                 ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.name;
-                cbI.Tag = ob.id;
+                cbI.Content = Weapon.GetNameFromID(line.weaponID);
+                cbI.Tag = line.weaponID;
                 cb_Weapon.Items.Add(cbI);
-            }
-            IEnumerable<Ammunition> ieA = Ammunition.GetAll();
-            foreach (Ammunition ob in ieA)
-            {
-                ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.name;
-                cbI.Tag = ob.id;
-                cb_Ammo.Items.Add(cbI);
             }
         }
         private void txt_GotFocus(object sender, RoutedEventArgs e)
@@ -88,6 +80,19 @@ namespace theHunterLog
                 cbI.Tag = ob.id;
                 cb_Ammo.Items.Add(cbI);
             }
+        }
+
+        private void btn_DelLine_Click(object sender, RoutedEventArgs e)
+        {
+            StackPanel panel = (StackPanel)this.VisualParent;
+            panel.Children.Remove(this);
+            int count = 0;
+            foreach(ControlHitList hit in panel.Children)
+            {
+                count++;
+                hit.txt_No.Text = count.ToString();
+            }
+
         }
     }
 }

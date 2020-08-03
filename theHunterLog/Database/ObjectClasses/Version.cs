@@ -8,6 +8,6 @@ namespace theHunterLog.Database.ObjectClasses
 {
     class Version
     {
-        public string version { get; set; }
+        public int version { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace theHunterLog
 
     public partial class NewLog : Window
     {
-        public List<ControlHitList> hits;
+        //public List<ControlHitList> hits;
         private static int lastMapIndex;
 
         public bool isClosed { get; private set; }
@@ -37,10 +37,9 @@ namespace theHunterLog
             this.Top = Properties.Settings.Default.NewLogWindowTop;
             this.Left = Properties.Settings.Default.NewLogWindowLeft;
             FillComboBoxesDe();
-            hits = new List<ControlHitList>();
-            hits.Add(new ControlHitList());
-            hits[hits.Count - 1].txt_No.Text = hits.Count.ToString();
-            sp_Hits.Children.Add(hits[hits.Count()-1]);
+            ControlHitList hit = new ControlHitList();
+            hit.txt_No.Text = "1";
+            sp_Hits.Children.Add(hit);
         }
 
         private void btn_Cancel_Click(object sender, RoutedEventArgs e)
@@ -65,9 +64,9 @@ namespace theHunterLog
         }
         private void bt_NewHit_Click(object sender, RoutedEventArgs e)
         {
-            hits.Add(new ControlHitList());
-            hits[hits.Count - 1].txt_No.Text = hits.Count.ToString();
-            sp_Hits.Children.Add(hits[hits.Count() - 1]);
+            ControlHitList hit = new ControlHitList();
+            hit.txt_No.Text = (sp_Hits.Children.Count+1).ToString();
+            sp_Hits.Children.Add(hit);
         }
 
         private void btn_SaveAndNew_Click(object sender, RoutedEventArgs e)
@@ -94,7 +93,7 @@ namespace theHunterLog
                 ComboBoxItem cbITrO = (ComboBoxItem)cb_TrophyOrgan.SelectedItem;
                 ComboBoxItem cbITr = (ComboBoxItem)cb_Trophy.SelectedItem;
                 int huntId = new Hunt(int.Parse(cbISp.Tag.ToString()), int.Parse(cbIS.Tag.ToString()), double.Parse(txt_Weight.Text), int.Parse(cbIF.Tag.ToString()), double.Parse(txt_Distance.Text), int.Parse(cbIDif.Tag.ToString()), int.Parse(cbITrK.Tag.ToString()), int.Parse(cbITrO.Tag.ToString()), int.Parse(cbITr.Tag.ToString()), double.Parse(txt_Score.Text), trueScoreID, int.Parse(txt_XP.Text), int.Parse(txt_Money.Text), int.Parse(txt_SessionPt.Text), txtBl_Note.Text, int.Parse(cbIM.Tag.ToString())).Insert();
-                foreach (ControlHitList h in hits)
+                foreach (ControlHitList h in sp_Hits.Children)
                 {
                     ComboBoxItem cbIW = (ComboBoxItem)h.cb_Weapon.SelectedItem;
                     ComboBoxItem cbIA = (ComboBoxItem)h.cb_Ammo.SelectedItem;
@@ -131,14 +130,6 @@ namespace theHunterLog
             if (lastMapIndex >= -1)
                 cb_map.SelectedIndex = lastMapIndex;
 
-            IEnumerable<Species> ieSp = Species.GetAll();
-            foreach (Species ob in ieSp)
-            {
-                ComboBoxItem cbI = new ComboBoxItem();
-                cbI.Content = ob.name;
-                cbI.Tag = ob.id;
-                cb_Animal.Items.Add(cbI);
-            }
             IEnumerable<Sex> ieS = Sex.GetAll();
             foreach(Sex ob in ieS)
             {

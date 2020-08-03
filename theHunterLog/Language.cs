@@ -20,6 +20,7 @@ namespace theHunterLog
         public string btn_showLog { get; set; }
         public string btn_top { get; set; }
         public string btn_search { get; set; }
+        public string btn_LoadOut { get; set; }
         public string btn_settings { get; set; }
         public string btn_exit { get; set; }
 
@@ -73,6 +74,11 @@ namespace theHunterLog
         // Top //
         public string btn_all { get; set; }
 
+        //LoadOut//
+        public string loadout_Title { get; set; }
+        public string btn_Loadout_Cancel { get; set; }
+        public string btn_Loadout_Save { get; set; }
+
         // Warnings //
         public string warning_Close_App { get; set; }
         public string warning_Save_Log { get; set; }
@@ -89,6 +95,7 @@ namespace theHunterLog
             btn_showLog = Lang_String.GetStringById("btn_showLog");
             btn_top = Lang_String.GetStringById("btn_top");
             btn_search = Lang_String.GetStringById("btn_search");
+            btn_LoadOut = Lang_String.GetStringById("btn_LoadOut");
             btn_settings = Lang_String.GetStringById("btn_settings");
             btn_exit = Lang_String.GetStringById("btn_exit");
             newLog_Title = Lang_String.GetStringById("newLog_Title");
@@ -131,6 +138,9 @@ namespace theHunterLog
             btn_all = Lang_String.GetStringById("btn_all");
             btn_save_settings = Lang_String.GetStringById("btn_save_settings");
             lbl_hotkey = Lang_String.GetStringById("lbl_hotkey");
+            loadout_Title = Lang_String.GetStringById("loadout_Title");
+            btn_Loadout_Cancel = Lang_String.GetStringById("btn_Loadout_Cancel");
+            btn_Loadout_Save = Lang_String.GetStringById("btn_Loadout_Save");
             warning_Close_App = Lang_String.GetStringById("warning_Close_App");
             warning_Save_Log = Lang_String.GetStringById("warning_Save_Log");
         }

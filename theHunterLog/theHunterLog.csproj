@@ -120,8 +120,12 @@
     <Compile Include="Controls\ControlHunt.xaml.cs">
       <DependentUpon>ControlHunt.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\LoadOutWeaponLine.xaml.cs">
+      <DependentUpon>LoadOutWeaponLine.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Database\FunktionClasses\DatabaseTools.cs" />
     <Compile Include="Database\FunktionClasses\DatabaseUpdates.cs" />
+    <Compile Include="Database\ObjectClasses\Loadout_Line.cs" />
     <Compile Include="Database\ObjectClasses\Map.cs" />
     <Compile Include="Database\ObjectClasses\Sex.cs" />
     <Compile Include="Database\ObjectClasses\Lang_String.cs" />
@@ -139,6 +143,9 @@
     <Compile Include="Database\ObjectClasses\TrueScore.cs" />
     <Compile Include="KeyboardListener.cs" />
     <Compile Include="Language.cs" />
+    <Compile Include="LoadOut.xaml.cs">
+      <DependentUpon>LoadOut.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Log.xaml.cs">
       <DependentUpon>Log.xaml</DependentUpon>
     </Compile>
@@ -159,6 +166,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\ControlHunt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\LoadOutWeaponLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadOut.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

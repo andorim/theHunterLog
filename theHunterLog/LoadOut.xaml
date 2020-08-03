@@ -1,0 +1,27 @@
+﻿<Window x:Class="theHunterLog.LoadOut"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:theHunterLog"
+        xmlns:controls="clr-namespace:theHunterLog.Controls"
+        mc:Ignorable="d"
+        Title="{Binding loadout_Title}" Height="500" Width="350" WindowStyle="None" ResizeMode="NoResize">
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Horizontal">
+            <Label Width="241" x:Name="lbl_Weapons" MouseDown="lbl_Weapons_MouseDown" Content="{Binding loadout_Title}"></Label>
+            <Button Width="30" x:Name="btnAddWeapon" Click="btnAddWeapon_Click">+</Button>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Width="300" Background="Azure">
+            <Label Width="120" Content="{Binding lbl_weapon}"></Label>
+            <Label Width="120" Content="{Binding lbl_ammunition}"></Label>
+        </StackPanel>
+        <StackPanel x:Name="spWeapons" Width="300" Height="400">
+            
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Width="300">
+            <Button x:Name="btnSave" Width="120" Content="{Binding btn_Loadout_Save}" Height="25" Click="btnSave_Click"></Button>
+            <Button x:Name="btnCancel" Width="120" Margin="60,0,0,0" Content="{Binding btn_Loadout_Cancel}" Height="25" Click="btnCancel_Click"></Button>
+        </StackPanel>
+    </StackPanel>
+</Window>
