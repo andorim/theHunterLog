@@ -34,9 +34,12 @@ namespace theHunterLog.Database.FunktionClasses
             TrueScore.CreateTable();
             Weapon.CreateTable();
             Map.CreateTable();
+            Loadout_Line.CreateTable();
+            theHunterLog.Database.ObjectClasses.Version.CreateTable();
         }
         public static void CreateUserTables()
         {
+            
             
             Hit.CreateTable();
             Hunt.CreateTable();

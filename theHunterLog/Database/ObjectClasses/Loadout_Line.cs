@@ -16,6 +16,13 @@ namespace theHunterLog.Database.ObjectClasses
         public int weaponID { get; set; }
         public int ammunitionID { get; set; }
 
+        static public void CreateTable()
+        {
+            SQLiteConnection db = DatabaseTools.getUserConnection();
+            db.CreateTable<Loadout_Line>();
+            db.Close();
+        }
+
         public void Insert()
         {
             SQLiteConnection db = DatabaseTools.getUserConnection();

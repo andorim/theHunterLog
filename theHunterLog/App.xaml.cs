@@ -20,7 +20,9 @@ namespace theHunterLog
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            
+            String path = Environment.GetEnvironmentVariable("LocalAppData") + @"\theHunterLog\Debug\";
+            System.IO.Directory.CreateDirectory(path);
+
             KListener.KeyDown += new RawKeyEventHandler(KListener_KeyDown);
         }
         private void Application_Exit(object sender, ExitEventArgs e)
